@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Core\Data\" />
+    <Folder Include="Core\Domain\" />
+    <Folder Include="Core\Mediator\" />
+    <Folder Include="Core\Messaging\" />
+    <Folder Include="Core\SpecificationResult\" />
+    <Folder Include="Core\Specification\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="11.6.0" />
+    <PackageReference Include="MailKit" Version="4.1.0" />
+    <PackageReference Include="MediatR" Version="12.1.1" />
+  </ItemGroup>
+
+</Project>

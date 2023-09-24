@@ -1,0 +1,51 @@
+@media (min-width:960px) {
+  .mat-sidenav {
+    width: 40% !important;
+  }
+}
+
+.page-wrapper {
+  background-color: white !important;
+  overflow-x: hidden;
+}
+
+.groupText {
+  background-color: #f5f3f3;
+  border-top: 1px solid #d8d8d8;
+  border-bottom: 1px solid #d8d8d8;
+  padding: 10px;
+}
+
+
+.closeSide {
+  text-align: end;
+}
+
+.btnClose {
+  background-color: #e91e63;
+  color: white;
+}
+
+.avatar {
+  height: 130px;
+}
+
+.btnDelete {
+  float: right;
+}
+
+.rowName {
+  float: left;
+}
+@media (min-width:960px) {
+  .rowName {
+    width: 90%;
+    float: left;
+    line-height: 45px;
+  }
+}
+.btnNovo {
+  background-color: #135ea0;
+  color: white;
+}
+

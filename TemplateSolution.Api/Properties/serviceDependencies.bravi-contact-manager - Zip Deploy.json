@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/TemplateSolutionApiapi/apis/TemplateSolutionApi",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Web/sites/bravi-contact-manager/providers/Microsoft.ServiceLinker/linkers/ConnectionStringsConnectionString_C1FE36FCBB",
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/bravi-contact/databases/bravi.contactmanager",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:ConnectionString",
+      "dynamicId": null
+    }
+  }
+}

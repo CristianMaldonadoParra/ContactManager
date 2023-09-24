@@ -1,0 +1,67 @@
+<div>
+  <h1>{{pessoa.nome}}</h1>
+</div>
+<mat-divider style="margin-bottom:10px"></mat-divider>
+<form (submit)="salvarPessoa()">
+  <mat-form-field>
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="pessoa.nome" name="nome" required>
+  </mat-form-field>
+  <button mat-raised-button type="submit">Salvar</button>
+</form>
+<div *ngIf="showConfig == true">
+  <mat-divider style="margin-bottom:10px;margin-top:10px;"></mat-divider>
+  <button mat-flat-button color="accent" (click)="openDialog(0,'Telefone', '')">Add Telefone</button>
+  <mat-nav-list>
+    <mat-list-item class="row-bottom" *ngFor="let telefone of telefones">
+      <div style="float: left; line-height: 50px;">
+        {{ telefone.valor }}
+      </div>
+      <div style="float: right;">
+        <button mat-icon-button (click)="openDialog(telefone.id,'Telefone', telefone.valor)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteContato(telefone.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+  </mat-nav-list>
+
+  <mat-divider style="margin-bottom:10px"></mat-divider>
+  <button mat-flat-button color="accent" (click)="openDialog(0,'Email', '')">Add E-mail</button>
+  <mat-nav-list>
+    <mat-list-item class="row-bottom" *ngFor="let email of emails">
+      <div style="float: left; line-height: 50px;">
+        {{ email.valor }}
+      </div>
+      <div style="float: right;">
+        <button mat-icon-button (click)="openDialog(email.id,'Email', email.valor)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteContato(email.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+  </mat-nav-list>
+
+
+  <mat-divider style="margin-bottom:10px"></mat-divider>
+  <button mat-flat-button color="accent" (click)="openDialog(0,'Whatsapp', '')">Add Whatsapp</button>
+  <mat-nav-list>
+    <mat-list-item class="row-bottom" *ngFor="let whatsapp of whatsapps">
+      <div style="float: left; line-height: 50px;">
+        {{ whatsapp.valor }}
+      </div>
+      <div style="float: right;">
+        <button mat-icon-button (click)="openDialog(whatsapp.id,'Whatsapp', whatsapp.valor)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDeleteContato(whatsapp.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-list-item>
+  </mat-nav-list>
+</div>

@@ -1,0 +1,48 @@
+<mat-card>
+  <mat-card-content>
+
+    <mat-sidenav-container class="example-sidenav-container">
+      <mat-sidenav #sidenav id="snav" class="dark-sidebar pl-xs" [mode]="'side'" position="end">
+        <mat-card>
+          <mat-card-content>
+            <div class="closeSide">
+              <button class="btnClose" mat-icon-button (click)="closeNav()" value="sidebarclosed">
+                <mat-icon>close</mat-icon>
+              </button>
+            </div>
+            <div class="profile-img">
+              <img class="avatar" src="assets/images/users/avatar3.png" alt="user">
+            </div>
+            <app-contato *ngIf="refresh == true" [id]="id"></app-contato>
+
+          </mat-card-content>
+        </mat-card>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="page-wrapper">
+        <mat-card-title>Contatos</mat-card-title>
+        <mat-card-subtitle>Meus contatos</mat-card-subtitle>
+
+        <button mat-icon-button class="btnNovo" (click)="onNovo()">
+          <mat-icon>add</mat-icon>
+        </button>&nbsp;
+        <button mat-icon-button class="btnNovo" (click)="onRefresh()">
+          <mat-icon>refresh</mat-icon>
+        </button>
+        <mat-divider style="margin-bottom:10px;margin-top:10px;"></mat-divider>
+
+        <mat-nav-list *ngFor="let grupo of pessoas | agruparPorLetra">
+          <h3 class="groupText" matSubheader>{{ grupo.letra }}</h3>
+          <mat-list-item class="row-bottom" *ngFor="let pessoa of grupo.pessoas">
+            <div class="rowName" (click)="onSelectPessoa(pessoa);">
+              {{ pessoa.nome }}
+            </div>
+            <button class="btnDelete" mat-icon-button (click)="onDelete(pessoa)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-list-item>
+        </mat-nav-list>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </mat-card-content>
+</mat-card>
